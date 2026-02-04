@@ -11,4 +11,16 @@ additional_files:
   - name: src/test/java/com/wcc/bootcamp/java/JavaBootcampApplicationTests.java
   - name: src/main/java/com/wcc/bootcamp/java/JavaBootcampApplication.java
   - name: README.md
-yaml_version: 5
+  - name: .gradle/9.3.0/checksums/sha1-checksums.bin
+    is_binary: true
+  - name: .gradle/9.3.0/checksums/md5-checksums.bin
+    is_binary: true
+  - name: docs/HOW_TO_FORK.md
+  - name: .gradle/9.3.0/fileChanges/last-build.bin
+    is_binary: true
+  - name: .gradle/9.3.0/gc.properties
+  - name: .gradle/vcs-1/gc.properties
+  - name: .git/FETCH_HEAD
+  - name: docs/HOW_TO_SUBMIT.md
+  - name: docs/PROJECT_IDEAS.md
+yaml_version: 3
