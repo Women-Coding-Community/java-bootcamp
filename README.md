@@ -19,6 +19,8 @@ New to forking? Check out our detailed [How to Fork Guide](./docs/HOW_TO_FORK.md
 
 ### 2. Choose a Project
 Browse our [Project Ideas](./docs/PROJECT_IDEAS.md) for inspiration. Pick a basic or advanced project based on your skill level.
+</br> OR </br>
+contribute to our existing production grade [platform project](https://github.com/Women-Coding-Community/wcc-backend)
 
 ### 3. Build Your Project
 Create your project in the following structure:
@@ -66,10 +68,9 @@ java-bootcamp/
 Check out our [Project Ideas Guide](./docs/PROJECT_IDEAS.md) for:
 - **Basic Projects:** Perfect for Java beginners
 - **Intermediate Projects:** For those comfortable with Java basics
-- **Advanced Projects:** Complex features requiring deeper Java knowledge
 
 All projects are designed around adding value to the WCC community!
-OR
+</br>OR</br>
 Choose your own idea or use-case.
 
 ## 🛠️ Getting Started
