@@ -10,5 +10,5 @@ additional_files:
   - name: settings.gradle.kts
   - name: src/test/java/com/wcc/bootcamp/java/JavaBootcampApplicationTests.java
   - name: src/main/java/com/wcc/bootcamp/java/JavaBootcampApplication.java
-  - name: HELP.md
+  - name: README.md
 yaml_version: 5
