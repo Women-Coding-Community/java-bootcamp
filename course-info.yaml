@@ -1,0 +1,14 @@
+type: marketplace
+title: java-bootcamp
+language: English
+programming_language: Java
+environment_settings:
+  jvm_language_level: JDK_25
+additional_files:
+  - name: gradle/wrapper/gradle-wrapper.properties
+  - name: build.gradle.kts
+  - name: settings.gradle.kts
+  - name: src/test/java/com/wcc/bootcamp/java/JavaBootcampApplicationTests.java
+  - name: src/main/java/com/wcc/bootcamp/java/JavaBootcampApplication.java
+  - name: HELP.md
+yaml_version: 5
