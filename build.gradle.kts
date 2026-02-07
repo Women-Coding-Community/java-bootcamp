@@ -20,6 +20,7 @@ repositories {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter")
+	implementation(project(":participants:fugitiva:ASCII_mirror")) // add dependency on participant_name/project_name
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
@@ -27,3 +28,4 @@ dependencies {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+
