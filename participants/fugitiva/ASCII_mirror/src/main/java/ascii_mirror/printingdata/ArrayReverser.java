@@ -1,4 +1,4 @@
-package ascii_mirror;
+package ascii_mirror.printingdata;
 
 
 import org.slf4j.Logger;
