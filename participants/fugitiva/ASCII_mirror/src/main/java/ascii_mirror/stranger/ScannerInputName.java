@@ -9,7 +9,6 @@ import java.util.Scanner;
 @Order(3)
 @Component
 public class ScannerInputName implements CommandLineRunner {
-
     /**
      *  Sample Input 1:
      *  Jane Kate - name1 with space
