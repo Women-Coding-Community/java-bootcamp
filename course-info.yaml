@@ -11,4 +11,5 @@ additional_files:
   - name: src/test/java/com/wcc/bootcamp/java/JavaBootcampApplicationTests.java
   - name: src/main/java/com/wcc/bootcamp/java/JavaBootcampApplication.java
   - name: README.md
+  - name: src/test/java/com/wcc/bootcamp/java/introduction/IntroductionTest.java
 yaml_version: 5
