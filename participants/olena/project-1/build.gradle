@@ -1,0 +1,15 @@
+plugins {
+    id 'application'
+}
+
+group = 'com.wcc'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClass = 'com.wcc.platform.Main'
+}
+
