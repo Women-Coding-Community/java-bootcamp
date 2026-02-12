@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 
 
 public class ArrayReverser  {
-
     private static final Logger logger = LoggerFactory.getLogger(ArrayReverser.class);
 
     public static void main(String[] args) {
