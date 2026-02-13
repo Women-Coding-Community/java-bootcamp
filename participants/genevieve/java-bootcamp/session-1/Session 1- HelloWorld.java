@@ -15,7 +15,7 @@ public class HelloWorld {
     public static void main(String[] args) {
         
         // Step 3: Print "Hello, World!" to the console
-        System.out.println("Hello, World!");
+        System.out.println("greeting");
     }
 }
 What do these mean?
@@ -23,8 +23,8 @@ Define the class
 
 public class HelloWorld { … }
 
-Everything in Java must be inside a class. This one is called HelloWorld.
-
+Everything in Java must be inside a class. This one is called Hello World. The first ritual step in learning any language
+    
 Define the main method
 
 public static void main(String[] args)
@@ -33,17 +33,14 @@ This is the entry point of the program — Java starts running the code here.
 
 Print to the console
 
-System.out.println("Hello, World!");
+System.out.println("greeting");
 
 Prints the text "Hello, World!" to the screen.
 
 Java executes this line, and you see the output in the console.
 
 
-Practice example
-public class HelloWorld {
-public static void main(String[] args)
-System.out.println("Hello, World!");
- }
- }
+
+
+ 
 
