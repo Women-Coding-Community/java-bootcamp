@@ -30,38 +30,21 @@ public class ScannerInputName  {
      */
 
     public static void main(String[] args) {
-
-
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter 3 names::");
-        // Read the first name part (single token)
-        String name1Part1 = scanner.next();
+        System.out.println("Enter 3 names: ");
+        String[] names = new String[3];
 
-        // Read the rest of the name1 (including spaces)
-        String name1Part2 = scanner.nextLine();
-
-        // Combine them to form the full name1
-        String name1 = name1Part1 + name1Part2;
-
-        // Read the second name (which can include spaces)
-        String name2 = scanner.nextLine();
-
-        // Read the third name
-        String name3 = scanner.nextLine();
-
-        // Print the third name
-        System.out.println(name3);
-
-        // Split name2 into parts and print them in reverse
-        String[] nameParts2 = name2.split(" ");
-        for (int i = nameParts2.length - 1; i >= 0; i--) {
-            System.out.println(nameParts2[i]);
+        // Read exactly 3 names
+        for (int count = 0; count < 3; count++) {
+            names[count] = scanner.nextLine();
         }
 
-        // Split name1 into parts and print them in reverse
-        String[] nameParts1 = name1.split(" ");
-        for (int i = nameParts1.length - 1; i >= 0; i--) {
-            System.out.println(nameParts1[i]);
+        // Print the names in reverse order
+        for (int i = 2; i >= 0; i--) { // Start from the last name
+            String[] nameParts = names[i].split(" ");
+            for (int j = nameParts.length - 1; j >= 0; j--) { // Print each part in reverse
+                System.out.println(nameParts[j]);
+            }
         }
 
         scanner.close(); // Close the scanner
