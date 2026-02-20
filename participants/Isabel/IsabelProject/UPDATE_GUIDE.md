@@ -33,7 +33,7 @@ Note: This push will create a pull request on the main branch in the Women-Codin
 
 ## 1. Switch to the Main Branch
 ```bash
-git checkout main
+git checkout master
 ```
 ---
 ## 2. Update Main Branch (Optional)
