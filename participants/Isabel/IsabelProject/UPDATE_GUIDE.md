@@ -27,11 +27,11 @@ git push origin Isabel
 ```
 ---
 
-Note: This push will create a pull request on the main branch in the Women-Coding-Community/java-bootcamp.
+Note: This push will create a pull request on the "main" branch in the Women-Coding-Community/java-bootcamp.
 
-# Merge Changes from the Isabel Branch to master/main branch
+# Merge Changes from the Isabel Branch to master branch
 
-## 1. Switch to the Main Branch
+## 1. Switch to the master Branch
 ```bash
 git checkout master
 ```
@@ -53,4 +53,4 @@ git merge Isabel
 git push origin master
 ```
 ---
-After pushing, your changes from the Isabel branch will be merged into the main branch. You can
+After pushing, your changes from the Isabel branch will be merged into the remote master branch.
