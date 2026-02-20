@@ -40,7 +40,7 @@ git checkout master
 To ensure that your main branch is up to date, run:
 
 ```bash
-git pull origin main
+git pull origin master
 ```
 ---
 ## 3. Merge Changes from Isabel Branch
@@ -50,7 +50,7 @@ git merge Isabel
 ---
 ## 4. Push Merged Changes to Main Branch
 ```bash
-git push origin main
+git push origin master
 ```
 ---
 After pushing, your changes from the Isabel branch will be merged into the main branch. You can
