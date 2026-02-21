@@ -23,4 +23,5 @@ additional_files:
   - name: .git/FETCH_HEAD
   - name: docs/HOW_TO_SUBMIT.md
   - name: docs/PROJECT_IDEAS.md
-yaml_version: 3
+  - name: docs/guides/numeric-literals-simplified.md
+yaml_version: 5
