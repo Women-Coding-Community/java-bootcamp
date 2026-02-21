@@ -41,6 +41,7 @@ public class ScannerInput  {
         String age = scanner.nextLine();
         //Hello, I am John! I am 22 years old.
         System.out.println("Hello, I am " + name + "! I am " + age + " years old.");
+        scanner.close(); // Close the scanner
     }
 
     }

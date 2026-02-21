@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ScannerOrder  {
 
     public static void main(String[] args) {
-
+        //Testing the Scanner class to read user input for a restaurant order
         System.out.println("Welcome to our restaurant!");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your name:: ");
@@ -15,9 +15,9 @@ public class ScannerOrder  {
 
         System.out.println("Thank you, " + name + "!");
         System.out.println("Your order is:: " + order);
-        System.out.println("=============================");
+        System.out.println("==========next exercise===================");
 
-
+    // This exercise tests the order of reading input using the Scanner class.
         /** Sample Input 1:
         //Hello
         //Java
