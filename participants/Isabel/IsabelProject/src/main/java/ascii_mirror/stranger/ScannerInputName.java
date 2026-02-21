@@ -41,12 +41,20 @@ public class ScannerInputName  {
 
         // Print the names in reverse order
         for (int i = 2; i >= 0; i--) { // Start from the last name
-            String[] nameParts = names[i].split(" ");
+            //input is "Jane Kate"
+            //Split it into pieces wherever there is a single space " ",
+            //Return those pieces as an array (String[]).
+            //So if names[i] = "Jane Kate" then:
+            //names[i].split(" ") becomes ["Jane", "Kate"]
+            //That result is stored in nameParts=["jane", "Kate"]
+            //split("\\s+") (split on one-or-more whitespace).
+            String[] nameParts = names[i].split("\\s+");
+            // And then printed in reverse order by the inner loop (j from end to start).
+            // So for "Jane Kate", it will print "Kate" first and then "Jane".
             for (int j = nameParts.length - 1; j >= 0; j--) { // Print each part in reverse
                 System.out.println(nameParts[j]);
             }
         }
-
         scanner.close(); // Close the scanner
     }
 }
