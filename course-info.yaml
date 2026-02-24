@@ -23,4 +23,4 @@ additional_files:
   - name: .git/FETCH_HEAD
   - name: docs/HOW_TO_SUBMIT.md
   - name: docs/PROJECT_IDEAS.md
-yaml_version: 3
+yaml_version: 5
