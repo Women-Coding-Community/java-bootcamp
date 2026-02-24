@@ -12,6 +12,20 @@ This bootcamp is designed for participants to learn Java at their own pace, but 
   - Submitting your project from minimalistic to highly complex idea. Or just showcase what you have learned.
   - For any inspiration check [Project Ideas](./docs/PROJECT_IDEAS.md)
 
+## 🎓 Learning Resources
+
+We've created comprehensive guides and resources to support your learning journey:
+
+- **📖 [Learning Path](./docs/LEARNING_PATH.md)** - Structured roadmap through Java fundamentals and beyond
+- **📚 [Java Guides](./docs/guides/README.md)** - In-depth tutorials on key topics created during sessions
+- **❓ [FAQ](./docs/FAQ.md)** - Common questions and solutions from bootcamp participants
+- **📝 [Session Notes](./docs/SESSION_NOTES.md)** - Summaries of live sessions, topics discussed, and Q&A
+
+### Featured Guides
+
+- [Understanding Numeric Literals](./docs/guides/numeric-literals-simplified.md) - Master Java data types (`int`, `double`, type conversion)
+- [The `final` Keyword in Java 21](./docs/guides/final-keyword-java-21.md) - Constants, immutability, Records, and Sealed Classes
+
 ## 🚀 How to Participate
 
 ### 1. Fork This Repository
@@ -41,9 +55,17 @@ Follow the guidelines in [How to Submit Your Project](./docs/HOW_TO_SUBMIT.md)
 java-bootcamp/
 ├── README.md                          # This file
 ├── docs/
+│   ├── LEARNING_PATH.md              # Structured learning roadmap
+│   ├── FAQ.md                        # Common questions and answers
+│   ├── SESSION_NOTES.md              # Live session summaries
 │   ├── HOW_TO_FORK.md                # Guide to fork this repository
 │   ├── HOW_TO_SUBMIT.md              # Submission guidelines
-│   └── PROJECT_IDEAS.md              # Basic and advanced project ideas
+│   ├── PROJECT_IDEAS.md              # Basic and advanced project ideas
+│   └── guides/
+│       ├── README.md                 # Guide index
+│       ├── numeric-literals-simplified.md
+│       ├── final-keyword-java-21.md
+│       └── ... (more guides added after each session)
 ├── participants/
 │   └── <your-name>/
 │       └── project/
