@@ -24,4 +24,5 @@ additional_files:
   - name: docs/HOW_TO_SUBMIT.md
   - name: docs/PROJECT_IDEAS.md
   - name: docs/guides/numeric-literals-simplified.md
+  - name: participants/olena/project-1/src/main/java/com/wcc/platform/model/Member.java
 yaml_version: 5
