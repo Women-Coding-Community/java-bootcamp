@@ -1,5 +1,6 @@
 package com.wcc.platform.model;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,9 +21,16 @@ public class MemberRepository {
     }
 
     public void saveToCsv(String filePath) throws IOException {
-        FileWriter writer = new FileWriter(filePath, true);
 
-        writer.write("name,email,location,joinDate%n");
+        File file = new File(filePath);
+        boolean fileExists = file.exists();
+        boolean fileEmpty = !fileExists || file.length() == 0;
+
+        FileWriter writer = new FileWriter(file, true);
+
+        if(fileEmpty) {
+            writer.write(String.format("name,email,location,joinDate%n"));
+        }
 
         for (Member member : members) {
             writer.write(String.format("%s,%s,%s,%s%n",
