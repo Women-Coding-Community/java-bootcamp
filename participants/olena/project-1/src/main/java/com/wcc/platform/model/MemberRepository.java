@@ -25,7 +25,7 @@ public class MemberRepository {
         boolean fileExists = file.exists();
         boolean fileEmpty = !fileExists || file.length() == 0;
 
-        FileWriter writer = new FileWriter(file, true);
+        FileWriter writer = new FileWriter(file);
 
         if(fileEmpty) {
             writer.write(String.format("name,email,location,joinDate%n"));
