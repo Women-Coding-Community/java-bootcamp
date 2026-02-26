@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 
 public class Main {
-
+//CLI add User
     private static final Scanner scanner = new Scanner(System.in);
     private static final MemberRepository repository = new MemberRepository();
 
