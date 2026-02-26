@@ -24,10 +24,13 @@ public class Main {
         System.out.println("Enter email: ");
         String email = scanner.nextLine();
 
+        System.out.println("Enter location: ");
+        String location = scanner.nextLine();
+
         Member member = new Member(
                 name,
                 email,
-                "Unknown",
+                location,
                 List.of(),
                 LocalDate.now()
         );
