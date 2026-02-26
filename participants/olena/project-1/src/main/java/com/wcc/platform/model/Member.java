@@ -47,7 +47,7 @@ public class Member {
 
     @Override
     public String toString() {
-        return String.format("%s | %s | %s", name, email, lacation);
+        return String.format("%s | %s | %s", name, email, location);
     }
 }
 

@@ -1,4 +1,4 @@
-package com.wcc.platform.member;
+package com.wcc.platform.model;
 
 import java.util.ArrayList;
 import java.util.List;
