@@ -83,6 +83,8 @@ participants/victoria/project/src/test/java/com/wcc/bootcamp/java/mentorship/
     └── DtoValidationTest.java       # Form validation tests
 ```
 
+> **Note**: Controller tests are not included because `@WebMvcTest` and `@AutoConfigureMockMvc` are not available in Spring Boot 4.0.2's `spring-boot-starter-test`.
+
 ## Application Pages
 
 | URL | Description |
