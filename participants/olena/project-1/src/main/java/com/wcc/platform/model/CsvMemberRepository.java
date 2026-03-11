@@ -11,6 +11,12 @@ public class CsvMemberRepository implements MemberRepository {
     private final List<Member> members = new ArrayList<>();
 
     public void add(Member member) {
+        boolean exists = members.stream().anyMatch(m->m.getEmail().equalsIgnoreCase(member.getEmail()));
+
+        if(exists) {
+            System.out.println("Member already exists.");
+            return;
+        }
         members.add(member);
     }
 
