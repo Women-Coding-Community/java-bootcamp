@@ -42,7 +42,14 @@ public class Main  {
         viewMembers();
     }
     public static void viewMembers() {
-        repository.findAll().forEach(System.out::println);
+
+        System.out.printf("%-15s %-25s %-15s%n", "Name", "Email", "Location");
+        System.out.println("----------------------------------------------------------");
+        repository.findAll().forEach(member -> System.out.printf("%-15s %-25s %-15s%n",
+                member.getName(),
+                member.getEmail(),
+                member.getLocation()
+        ));
     }
 }
 

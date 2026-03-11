@@ -24,21 +24,21 @@ public class CsvMemberRepository implements MemberRepository {
         boolean fileExists = file.exists();
         boolean fileEmpty = !fileExists || file.length() == 0;
 
-        FileWriter writer = new FileWriter(file);
+       try(FileWriter writer = new FileWriter(file)) {
 
-        if(fileEmpty) {
-            writer.write(String.format("name,email,location,joinDate%n"));
-        }
+           if (fileEmpty) {
+               writer.write(String.format("name,email,location,joinDate%n"));
+           }
 
-        for (Member member : members) {
-            writer.write(String.format("%s,%s,%s,%s%n",
-                    member.getName(),
-                    member.getEmail(),
-                    member.getLocation(),
-                    member.getJoinDate()
-            ));
-        }
-        writer.close();
+           for (Member member : members) {
+               writer.write(String.format("%s,%s,%s,%s%n",
+                       member.getName(),
+                       member.getEmail(),
+                       member.getLocation(),
+                       member.getJoinDate()
+               ));
+           }
+       }
     }
 
     public void loadFromCsv(String filePath) throws IOException {
