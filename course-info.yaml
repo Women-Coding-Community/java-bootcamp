@@ -29,4 +29,5 @@ additional_files:
   - name: src/main/java/com/wcc/bootcamp/java/Main.java
   - name: participants/olena/project-1/src/main/java/com/wcc/platform/model/CsvMemberRepository.java
   - name: participants/olena/project-1/src/test/java/com/wcc/platform/EmailValidatorTest.java
+  - name: participants/olena/project-1/CLAUDE.md
 yaml_version: 5
