@@ -81,7 +81,7 @@ Call out any coverage gaps that were not addressed.
 ## Rules
 
 - Never modify the class under test to make tests pass
-- No mocking libraries (project has no mocking dependency — use real objects)
+- Use Mockito (mockito-core 5.11.0) only for interface/CLI-layer tests where real objects cannot be used (e.g. MemberRepository in MemberCliTest). Prefer real objects for unit tests of plain classes.
 - Tests must be independent — no shared mutable state between test methods
 - One focused assertion per test
 - Never commit failing tests
