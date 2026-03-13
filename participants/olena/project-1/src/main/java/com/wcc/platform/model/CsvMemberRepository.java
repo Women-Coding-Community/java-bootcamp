@@ -42,7 +42,7 @@ public class CsvMemberRepository implements MemberRepository {
                         newName,
                         newEmail,
                         newLocation,
-                        m.getSkills(),
+                        List.of(newSkills.split(",")),
                         m.getJoinDate()
                 );
 
@@ -114,31 +114,29 @@ public class CsvMemberRepository implements MemberRepository {
             return;
         }
 
-        BufferedReader reader = new BufferedReader(new FileReader(filePath));
+        try(BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
 
-        String line;
+            reader.readLine();
 
-        reader.readLine();
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(",");
+                String name = parts[0].trim();
+                String email = parts[1].trim();
+                String location = parts[2].trim();
+                String skills = parts[3].trim();
+                List<String> skillList = List.of(skills.split("\\|"));
+                LocalDate joinDate = LocalDate.parse(parts[4].trim());
 
-        while ((line = reader.readLine()) != null) {
-            String[] parts = line.split(",");
-            String name = parts[0].trim();
-            String email = parts[1].trim();
-            String location = parts[2].trim();
-            String skills = parts[3].trim();
-            List<String> skillList = List.of(skills.split("\\|"));
-            LocalDate joinDate = LocalDate.parse(parts[4].trim());
-
-            Member member = new Member(
-                    name,
-                    email,
-                    location,
-                    skillList,
-                    joinDate
-            );
-            members.add(member);
+                Member member = new Member(
+                        name,
+                        email,
+                        location,
+                        skillList,
+                        joinDate
+                );
+                members.add(member);
+            }
         }
-        reader.close();
     }
 }
-
