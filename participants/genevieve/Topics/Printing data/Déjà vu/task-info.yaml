@@ -1,0 +1,9 @@
+type: unsupported
+custom_name: Déjà vu!
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/26369#comment
+status: Solved
+record: -1

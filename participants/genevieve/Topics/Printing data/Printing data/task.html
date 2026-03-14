@@ -1,0 +1,96 @@
+<div class="step-text">
+<p>When you write programs, you often need to print calculation results, text, or any other type of data. Also, throughout this educational platform, you will write a lot of programs that print data on the screen. Let's learn how to do that using a standard approach in Java.</p>
+<h5 id="displaying-text-using-println-and-print">Displaying text using println() and print()</h5>
+<p><strong><a class="theory-lookup not-relevant" href="/learn/step/3749" target="_blank" title="In Java, a standard output is a receiver to which a program can send information in the form of text. | It is supported by all common operating systems and Java provides a special object, `System.out`, to work with the standard output. This object is often used to print data, with the `println()` method displaying the passed string followed by a new line on the screen. Standard output is a way for a program to write data to a destination, which can be a console, a file, or even a web socket. It is important to note that there are two types of streams: byte and character.">Standard output</a></strong> is a receiver to which a program can send information as text. It is supported by all common operating systems. Java provides a special <code class="language-java">System.out</code> object to work with the standard output. We will often use it to print data.</p>
+<p>The <code class="language-java">println</code> method displays the passed string followed by a new line on the screen (<strong>print-line</strong>). For example, the following code snippet prints four lines.</p>
+<pre><code class="language-java">System.out.println("I ");
+System.out.println("know ");
+System.out.println("Java ");
+System.out.println("well.");
+</code></pre>
+<p>Here is the output we get:</p>
+<pre><code class="language-no-highlight">I
+know
+Java
+well.</code></pre>
+<p>All the strings were printed as they are, without double quotes.</p>
+<p>This method allows you to print an empty line when no string is given:</p>
+<pre><code class="language-java">System.out.println("Java is a popular programming language.");
+System.out.println(); // prints empty line
+System.out.println("It is used all over the world!");</code></pre>
+<p>And here is the output:</p>
+<pre><code class="language-no-highlight">Java is a popular programming language.
+
+It is used all over the world!</code></pre>
+<p>The <code class="language-java">print</code> method displays the value that was passed in and places the cursor (the position where we display a value) after it. For example, the code below outputs all strings in a single line.</p>
+<pre><code class="language-java">System.out.print("I ");
+System.out.print("know ");
+System.out.print("Java ");
+System.out.print("well.");
+</code></pre>
+<p>We receive the following output:</p>
+<pre><code class="language-no-highlight">I know Java well.</code></pre>
+<p>Pay attention to the spaces between words. We pass them to the method for printing.</p>
+<p></p>
+<div class="alert alert-primary"><p>4 letters<strong> sout</strong> and pressing the <strong>Tab</strong> key in the IntelliJ IDEA development environment will automatically write <code class="language-java">System.out.println()</code> for you</p><p></p></div>
+<h5 id="new-line-using-escape-characters">New line using escape characters</h5>
+<p>In many programming languages, including Java, you can use an <a class="theory-lookup not-relevant" href="/learn/step/3749" target="_blank" title="In Java, an escape character is a backslash (\) followed by a special character, which represents a special symbol that doesn't have a corresponding symbol on a keyboard. | Escape characters are used to represent special characters such as newline (\n), tab (\t), carriage return (\r), backslash (\), single quote mark (\'), and double quote mark (\). In Java, the backslash is also used as an escape character for literals, so to use a backslash in a regular expression, for example, we need to use an additional backslash to escape the one we need in the regular expression.">escape character</a> <code class="language-java">\n</code> which moves the cursor to the beginning of the next line of output. When you include <code class="language-java">\n</code> in a string passed to <code class="language-java">System.out.print</code>, it breaks the text at that point and continues printing on the following line. For example, the statement <code class="language-java">System.out.print("Hello\nWorld");</code> will output the following:</p>
+<pre><code class="language-bash">Hello
+World</code></pre>
+<p>This option is useful when you need to break a long text into new lines in multiple places or when you need to have multiple new lines:</p>
+<pre><code class="language-bash">Hello
+
+
+
+World</code></pre>
+<p>The following can be achieved by using three <code class="language-java">\n</code> characters:</p>
+<pre><code class="language-java">System.out.print("Hello\n\n\nWorld");</code></pre>
+<h5 id="printing-numbers-and-characters">Printing numbers and characters</h5>
+<p>Both <code class="language-java">println</code> and <code class="language-java">print</code> methods allow a program to print not only strings and characters, but also numbers.</p>
+<p>Let's print two secret codes.</p>
+<pre><code class="language-java">System.out.print(108);   // printing a number
+System.out.print('c');   // printing a character that represents a letter
+System.out.print("Q");   // printing a string
+System.out.println('3'); // printing a character that represents a digit
+
+System.out.print(22);
+System.out.print('E');
+System.out.print(8);
+System.out.println('1');
+</code></pre>
+<p>Here is our output:</p>
+<pre><code class="language-no-highlight">108cQ3
+22E81</code></pre>
+<p>As is the case with strings, none of the printed characters contain quotes.</p>
+<h5 id="concatenating-data">Concatenating data</h5>
+<p>In practice, you may need to concatenate strings or other literals inside <code class="language-java">System.out.println</code> into a single output. This can be achieved by simply placing them adjacent to each other and use the + operator to join them. For example, if you want to print a greeting with a name, you might write the following:</p>
+<pre><code class="language-java">public class Main {
+    public static void main(String[] args) {
+        String name = "John";
+
+        System.out.println("Hello, " + name + "!"); // Hello, John!
+    }
+}
+
+</code></pre>
+<p>The <code class="language-java">+</code> operator merges these elements into one cohesive string, which is then passed to <code class="language-java">System.out.println</code> to display the result on the console. Similarly, you can concatenate strings with integers or other types:</p>
+<pre><code class="language-java">public class Main {
+    public static void main(String[] args) {
+        int age = 33;
+
+        System.out.println("Hello, I am " + age + " years old."); // Hello, I am 33 years old.
+    }
+}
+</code></pre>
+<p>In such cases, the value of that type will be converted to a string and merged with the string to the left of the <code class="language-java">+</code> operator.</p>
+<p>Take in account that when you concatenate a string with multiple integers in Java, the integers are converted to their string representations and concatenated in sequence. Here’s how it works step-by-step:</p>
+<pre><code class="language-java">public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, I am " + 3 + 3 + " years old."); // Hello, I am 33 years old.
+    }
+}
+</code></pre>
+<p>You might expect the result to be "<strong>Hello, I am 6 years old</strong>" but when you concatenate the first integer with the string, you get "<strong>Hello, I am 3</strong>" as a result. The second <code class="language-java">+</code> operator then merges this string with another <code class="language-java">3</code>, converting the integer to a string again.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>In Java, you can print data via the standard output using the <code class="language-java">System.out</code> object. You can use the <code class="language-java">println</code> method to display the passed string in a print-line and the <code class="language-java">print</code> method to output all passed strings in a single line. Both of these methods also allow for printing numbers as well as characters.</p>
+</div>

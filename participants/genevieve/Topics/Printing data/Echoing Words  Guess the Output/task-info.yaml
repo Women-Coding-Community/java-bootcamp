@@ -1,0 +1,9 @@
+type: unsupported
+custom_name: "Echoing Words: Guess the Output!"
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/47400#comment
+status: Solved
+record: -1

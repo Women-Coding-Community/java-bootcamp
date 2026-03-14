@@ -1,0 +1,14 @@
+type: code
+files:
+  - name: src/Main.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/39424#comment
+status: Solved
+feedback:
+  message: |-
+    <html>You've used all 7 of your lives for today.
+    Use this pause to revisit theory, and we'll see you tomorrow for more practice!</html>
+  time: "Thu, 12 Feb 2026 21:00:06 UTC"
+record: -1
+submission_language: java17

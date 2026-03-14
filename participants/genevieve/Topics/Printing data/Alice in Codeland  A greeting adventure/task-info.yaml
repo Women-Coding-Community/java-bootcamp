@@ -1,0 +1,9 @@
+type: unsupported
+custom_name: "Alice in Codeland: A greeting adventure"
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/49206#comment
+status: Solved
+record: -1
