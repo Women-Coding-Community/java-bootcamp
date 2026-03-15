@@ -1,0 +1,78 @@
+<div class="step-text">
+<p>The <code class="language-java">char</code> type is used to represent letters (both uppercase and lowercase), digits, and other symbols. Each character is just a symbol enclosed in single quotes.</p>
+<pre><code class="language-java">char lowerCaseLetter = 'a';
+char upperCaseLetter = 'Q';
+char number = '1';
+char space = ' ';
+char dollar = '$';</code></pre>
+<p>This type can represent all characters in all languages as well as some special and computer symbols. It corresponds to the <strong>Unicode</strong> (UTF-16) format. Unicode is a computer encoding methodology that assigns a unique number for every character. It doesn't matter what language, or computer platform it's on. This is important in a global, networked world, and for computer systems that must accommodate multiple languages and special characters. Unicode truly unifies all of these into a single standard.</p>
+<h5 id="initializing-characters-with-codes">Initializing characters with codes</h5>
+<p>A character can also be created using its <a class="theory-lookup not-relevant" href="/learn/step/3514" target="_blank" title="In Java, a hexadecimal is a number system that represents numbers using a base of 16, utilizing the digits 0-9 and letters A-F. | It is often used in programming to represent large numbers or specific character codes, such as Unicode. For instance, Unicode characters can be represented by a hexadecimal code starting with \u followed by four hexadecimal digits. In Java, a character is actually an integer type that stores the 16-bit Unicode integer value of each character. Therefore, character literals can be used as integers if needed.">hexadecimal</a> code in <a href="https://unicode-table.com/en/" rel="noopener noreferrer nofollow" target="_blank">the Unicode table</a>. The code starts with <code class="language-java">\u</code>.</p>
+<pre><code class="language-java">char ch = '\u0040'; // it represents '@'
+System.out.println(ch); // @</code></pre>
+<p>Although we use a sequence of characters to represent such a code, the code represents exactly one character.</p>
+<p>As an example, capital Latin letters have hexadecimal codes from <code class="language-java">'\u0041'</code> to <code class="language-java">'\u005A'</code>, and small Latin letters have codes from <code class="language-java">'\u0061'</code> to <code class="language-java">'\u007A'</code>.</p>
+<p>The <code class="language-java">char</code> type has a minimum value encoded as  <code class="language-java">'\u0000'</code> and the maximum value encoded as <code class="language-java">'\uffff'</code>.</p>
+<p>It is also possible to initialize a char with a positive integer number.</p>
+<pre><code class="language-java">char ch = 64;
+System.out.println(ch); // @</code></pre>
+<p>The number <code class="language-java">64</code> just corresponds to the Unicode hexadecimal code <code class="language-java">'\u0040'</code>.</p>
+<p>Any <code class="language-java">char</code> variable may be considered as an unsigned integer value in the range from 0 to 65535.</p>
+<h5 id="retrieving-subsequent-characters">Retrieving subsequent characters</h5>
+<p>There are two operators for adding (<code class="language-java">+</code>) and subtracting (<code class="language-java">-</code>) integer numbers in order to get the next and previous character according to the Unicode order.</p>
+<pre><code class="language-java">char ch = 'b';
+ch += 1; // 'c'
+ch -= 2; // 'a'</code></pre>
+<p>It is also possible to add or subtract two characters.</p>
+<pre><code class="language-java">char ch = 'b';
+ch += 'a';
+ch -= 'b';
+System.out.println(ch); // prints 'a' without quotes</code></pre>
+<p>Actually, these operations manipulate with codes of characters, <code class="language-java">'b'</code> has the next code after <code class="language-java">'a'</code>.</p>
+<p>It is possible to use increment (<code class="language-java">++</code>) and decrement (<code class="language-java">--</code>) operators in prefix and postfix forms.</p>
+<pre><code class="language-java">char ch = 'A';
+ch += 10;
+System.out.println(ch);   // 'K'
+System.out.println(++ch); // 'L'
+System.out.println(++ch); // 'M'
+System.out.println(--ch); // 'L'
+</code></pre>
+<h5 id="escape-sequences">Escape sequences</h5>
+<p>There are some special characters starting with a backslash <code class="language-java">\</code> which are known as the escape or control sequences. They do not have corresponding symbols and cannot be found on a keyboard. To represent such characters we use a pair of regular symbols. In a program, this pair will be considered as exactly one character with the appropriate code.  </p>
+<ul>
+<li>
+<p><code class="language-java">'\n'</code> is the newline character;</p>
+</li>
+<li>
+<p><code class="language-java">'\t'</code> is the tab character;</p>
+</li>
+<li>
+<p><code class="language-java">'\r'</code> is the carriage return character;</p>
+</li>
+<li>
+<p><code class="language-java">'\\'</code> is the backslash character itself;</p>
+</li>
+<li>
+<p><code class="language-java">'\''</code> is the single quote mark;</p>
+</li>
+<li>
+<p><code class="language-java">'\"'</code> is the double quote mark.</p>
+</li>
+</ul>
+<p>Here are several examples:</p>
+<pre><code class="language-java">System.out.print('\t'); // makes a tab
+System.out.print('a');  // prints 'a'
+System.out.print('\n'); // goes to the new line
+System.out.print('c');  // prints 'c'</code></pre>
+<p>This code prints:</p>
+<pre><code class="language-java">  a
+c</code></pre>
+<p> </p>
+<p> </p>
+<p></p>
+<div class="alert alert-primary">
+<p>There is also a character to represent a single space <code class="language-java">' '</code>. It is just a regular character, not an <a class="theory-lookup not-relevant" href="/learn/step/3514" target="_blank" title="In Java, an escape sequence is a set of characters used to represent a special character that does not have a corresponding symbol on a keyboard. | They begin with a backslash (\) followed by a special character or a regular symbol. Some examples of escape sequences include \n for newline, \t for tab, \r for carriage return, \\ for backslash, \' for single quote mark, and \ for double quote mark. These sequences are used to represent special characters that cannot be directly typed out in a program.">escape sequence</a>.</p>
+<p></p></div>
+<h5 id="conclusion">Conclusion</h5>
+<p>The <code class="language-java">char</code>type can represent characters from all languages and special symbols, thanks to its <strong>Unicode </strong>support. Characters can be initialized using their hexadecimal Unicode codes, which are denoted by <code class="language-java">'\u'</code> followed by the code. The char type has a minimum value of <code class="language-java">'\u0000'</code> and a maximum value of <code class="language-java">'\uffff'</code>. Characters can be manipulated using arithmetic operations to retrieve subsequent or previous characters based on their <strong>Unicode </strong>order. Escape sequences, starting with a backslash <code class="language-java">'\'</code>, are used to represent special characters that don't have corresponding symbols on a keyboard. Understanding the <code class="language-java">char</code>type and its capabilities is essential for working with textual data in Java. </p>
+</div>
