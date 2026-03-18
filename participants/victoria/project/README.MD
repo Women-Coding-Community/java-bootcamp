@@ -9,6 +9,49 @@ A Spring Boot web application that matches mentors with mentees based on skills 
 - **Smart Matching**: Algorithm matches mentees to mentors based on skill compatibility
 - **Match Management**: View, activate, and manage mentor-mentee relationships
 - **Data Persistence**: H2 file-based database ensures data survives server restarts
+- **Email Notifications**: Automatic email alerts to mentor and mentee when a match is created
+
+## Email Notifications (MailHog)
+
+The application sends email notifications when a match is created. For local development, use **MailHog** - a local SMTP server that captures emails for viewing.
+
+### Setting Up MailHog
+
+**Windows (download executable):**
+```powershell
+# Download MailHog
+Invoke-WebRequest -Uri "https://github.com/mailhog/MailHog/releases/download/v1.0.1/MailHog_windows_amd64.exe" -OutFile "MailHog.exe"
+
+# Run MailHog
+.\MailHog.exe
+```
+
+**Mac (Homebrew):**
+```bash
+brew install mailhog
+mailhog
+```
+
+**Docker:**
+```bash
+docker run -d -p 1025:1025 -p 8025:8025 mailhog/mailhog
+```
+
+### Accessing MailHog
+
+| Service | URL |
+|---------|-----|
+| SMTP Server | `localhost:1025` |
+| Web UI | http://localhost:8025 |
+
+When a match is created, both the mentor and mentee receive emails. View captured emails at [http://localhost:8025](http://localhost:8025).
+
+### Disabling Email
+
+To disable email notifications, set in `application.properties`:
+```properties
+spring.mail.enabled=false
+```
 
 ## Tech Stack
 

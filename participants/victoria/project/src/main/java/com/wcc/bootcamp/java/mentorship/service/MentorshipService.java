@@ -22,13 +22,16 @@ public class MentorshipService {
     private final MentorRepository mentorRepository;
     private final MenteeRepository menteeRepository;
     private final MatchRepository matchRepository;
+    private final EmailService emailService;
 
     public MentorshipService(MentorRepository mentorRepository, 
                             MenteeRepository menteeRepository, 
-                            MatchRepository matchRepository) {
+                            MatchRepository matchRepository,
+                            EmailService emailService) {
         this.mentorRepository = mentorRepository;
         this.menteeRepository = menteeRepository;
         this.matchRepository = matchRepository;
+        this.emailService = emailService;
     }
 
     // ==================== Mentor Operations ====================
@@ -242,7 +245,12 @@ public class MentorshipService {
         mentorRepository.save(mentor);
         menteeRepository.save(mentee);
         
-        return matchRepository.save(match);
+        Match savedMatch = matchRepository.save(match);
+        
+        // Send email notifications to both mentor and mentee
+        emailService.sendMatchNotification(savedMatch);
+        
+        return savedMatch;
     }
 
     @Transactional(readOnly = true)

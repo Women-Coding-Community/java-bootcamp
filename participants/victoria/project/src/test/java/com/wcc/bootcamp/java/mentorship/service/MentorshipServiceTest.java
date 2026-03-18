@@ -42,6 +42,9 @@ class MentorshipServiceTest {
     @Mock
     private MatchRepository matchRepository;
 
+    @Mock
+    private EmailService emailService;
+
     @InjectMocks
     private MentorshipService mentorshipService;
 
