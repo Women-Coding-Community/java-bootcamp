@@ -18,18 +18,32 @@ public class LifeStageBaseonAge  {
     //inputs 13, output: Teenager
 
     public static void main(String[] args) {
-        int age = 13; // You can change this value to test with different ages; 13
+        // and you can create tests for that
+        logger.info(determineLifeStage(30));
+        logger.info(determineLifeStage(10));
+        logger.info(determineLifeStage(70));
+        logger.info(determineLifeStage(0));
+        logger.info(determineLifeStage(99));
+
+        // if it is -1 will be valid and consider as a child ;)
+        logger.info(determineLifeStage(-1));
+
+        // if it is 200 will be valid and consider as a Adult ;)
+        logger.info(determineLifeStage(200));
+    }
+
+    public static String determineLifeStage(int age) {
         if (age <= 12) {
-            logger.info("Child");
+            return "Child";
         } else if (age >= 13 && age <= 17) {
-            logger.info("Teenager");
+            return "Teenager";
         } else if (age >= 18 && age <= 59) {
-            logger.info("Adult");
+            return "Adult";
         } else if (age >= 60) {
-            logger.info("Senior Citizen");
+            return "Senior Citizen";
         } else {
             logger.warn("Invalid age input: {}", age);
-            //System.out.println("invalid age");
+            return "Invalid age";
         }
     }
 }
