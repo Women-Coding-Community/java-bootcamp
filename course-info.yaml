@@ -23,5 +23,8 @@ additional_files:
   - name: .git/FETCH_HEAD
   - name: docs/HOW_TO_SUBMIT.md
   - name: docs/PROJECT_IDEAS.md
+  - name: participants/genevieve/project/README.md
+  - name: participants/genevieve/project/build.gradle
+  - name: participants/genevieve/project/src/SimpleBot.java
   - name: docs/guides/numeric-literals-simplified.md
 yaml_version: 5
