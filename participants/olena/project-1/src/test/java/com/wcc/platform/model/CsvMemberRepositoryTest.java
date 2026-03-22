@@ -162,6 +162,43 @@ class  CsvMemberRepositoryTest {
 
 
     @Test
+    void shouldUpdateMemberSkills() {
+        //Arrange
+        repository.add(member("Alice", "alice@example.com", "London", List.of("Java"), LocalDate.of(2023, 1, 1)));
+
+        //Act
+        repository.updateMember("alice@example.com", "Alice", "alice@example.com", "London", "Python,Go");
+
+        //Assert
+        assertEquals(List.of("Python", "Go"), repository.findAll().get(0).getSkills());
+    }
+
+    @Test
+    void shouldPreserveJoinDateAfterUpdate() {
+        //Arrange
+        LocalDate originalJoinDate = LocalDate.of(2023, 1, 1);
+        repository.add(member("Alice", "alice@example.com", "London", List.of("Java"), originalJoinDate));
+
+        //Act
+        repository.updateMember("alice@example.com", "Alice Updated", "newalice@example.com", "Berlin", "Python");
+
+        //Assert
+        assertEquals(originalJoinDate, repository.findAll().get(0).getJoinDate());
+    }
+
+    @Test
+    void shouldUpdateMemberWhenSearchEmailIsCaseInsensitive() {
+        //Arrange
+        repository.add(member("Alice", "alice@example.com", "London", List.of("Java"), LocalDate.of(2023, 1, 1)));
+
+        //Act
+        repository.updateMember("ALICE@EXAMPLE.COM", "Alice Updated", "newalice@example.com", "Berlin", "Python");
+
+        //Assert
+        assertEquals("Alice Updated", repository.findAll().get(0).getName());
+    }
+
+    @Test
     void shouldNotModifyListWhenUpdatingNonExistentEmail() {
         //Arrange
         repository.add(member("Alice", "alice@example.com", "London", List.of("Java"), LocalDate.of(2023, 1, 1)));

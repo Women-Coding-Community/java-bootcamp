@@ -2,6 +2,9 @@ package com.wcc.platform.cli;
 
 import com.wcc.platform.model.Member;
 import com.wcc.platform.model.MemberRepository;
+import com.wcc.platform.service.MemberDataOperations;
+import com.wcc.platform.service.MemberSearchService;
+import com.wcc.platform.service.MemberSortService;
 import com.wcc.platform.validation.EmailValidator;
 
 import java.io.IOException;
@@ -10,12 +13,18 @@ import java.util.List;
 import java.util.Scanner;
 
 public class MemberCli {
-    private final MemberRepository repository;
     private final Scanner scanner;
+    private final MemberSearchService searchService;
+    private final MemberSortService sortService;
+    private final MemberDataOperations dataOperations;
+    private final MemberPrinter printer;
 
     public MemberCli(MemberRepository repository) {
-        this.repository = repository;
         this.scanner = new Scanner(System.in);
+        this.searchService = new MemberSearchService(repository);
+        this.sortService = new MemberSortService(repository);
+        this.dataOperations = new MemberDataOperations(repository);
+        this.printer = new MemberPrinter();
     }
 
     public void start() throws IOException {
@@ -103,25 +112,15 @@ public class MemberCli {
                 LocalDate.now()
         );
 
-        repository.add(member);
-        repository.saveToCsv("members.csv");
+        dataOperations.addMember(member);
 
         System.out.println("Member added.");
     }
 
     private void viewMembers() {
 
-        System.out.printf("%-15s %-25s %-15s %-20s%n", "Name", "Email", "Location", "Skills");
-        System.out.println("---------------------------------------------------------------------------------");
-
-        repository.findAll().forEach(member ->
-                System.out.printf("%-15s %-25s %-15s %-20s%n",
-                        member.getName(),
-                        member.getEmail(),
-                        member.getLocation(),
-                        String.join("|", member.getSkills())
-                )
-        );
+        printer.printHeader();
+        printer.printMembers(dataOperations.findAll());
     }
 
     private void updateMember() throws IOException {
@@ -141,9 +140,9 @@ public class MemberCli {
         System.out.println("Enter new skills:");
         String newSkills = scanner.nextLine();
 
-        repository.updateMember(email, newName, newEmail, newLocation, newSkills);
+        dataOperations.updateMember(email, newName, newEmail, newLocation, newSkills);
 
-        repository.saveToCsv("members.csv");
+        System.out.println("Member updated.");
     }
 
 
@@ -153,28 +152,20 @@ public class MemberCli {
 
         String email = scanner.nextLine();
 
-        repository.deleteByEmail(email);
-
-        repository.saveToCsv("members.csv");
+        dataOperations.deleteMember(email);
 
         System.out.println("Member deleted.");
     }
-
 
     private void searchByLocation() {
 
         System.out.println("Enter location:");
         String location = scanner.nextLine();
 
-        List<Member> results = repository.findByLocation(location);
+        List<Member> results = searchService.findByLocation(location);
 
-        results.forEach(member ->
-                System.out.printf("%-15s %-25s %-15s%n",
-                        member.getName(),
-                        member.getEmail(),
-                        member.getLocation()
-                )
-        );
+        printer.printHeader();
+        printer.printMembers(results);
     }
 
     private void searchBySkill() {
@@ -182,40 +173,27 @@ public class MemberCli {
         System.out.println("Enter skill:");
         String skill = scanner.nextLine();
 
-        List<Member> results = repository.findBySkill(skill);
+        List<Member> results = searchService.findBySkill(skill);
 
-        results.forEach(member ->
-                System.out.printf("%-15s %-25s %-15s%n",
-                        member.getName(),
-                        member.getEmail(),
-                        member.getLocation()
-                )
-        );
+        printer.printHeader();
+        printer.printMembers(results);
     }
 
     private void sortByName() {
 
-        List<Member> results = repository.sortByName();
+        List<Member> results = sortService.sortByName();
 
-        results.forEach(member ->
-                System.out.printf("%-15s %-25s %-15s%n",
-                        member.getName(),
-                        member.getEmail(),
-                        member.getLocation()
-                )
-        );
+        printer.printHeader();
+        printer.printMembers(results);
     }
 
     private void sortByJoinDate() {
 
-        List<Member> results = repository.sortByJoinDate();
+        List<Member> results = sortService.sortByJoinDate();
 
-        results.forEach(member ->
-                System.out.printf("%-15s %-25s %-15s%n",
-                        member.getName(),
-                        member.getEmail(),
-                        member.getLocation()
-                )
-        );
+        printer.printHeader();
+        printer.printMembers(results);
     }
+
+
 }
