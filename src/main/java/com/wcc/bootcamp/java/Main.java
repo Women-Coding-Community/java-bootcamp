@@ -1,7 +1,9 @@
+package com.wcc.bootcamp.java;
+
 public class Main {
     public static void main(String[] args) {
         String greetings = "Hello World";
-        System.out.println(greeting);
+        System.out.println(greetings);
     }
 }
 

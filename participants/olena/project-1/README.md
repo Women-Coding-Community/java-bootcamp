@@ -1,87 +1,92 @@
-# Member Directory Command Line Tool
+# Member Directory — CLI Tool
 
-A simple command-line application built in Java to manage WCC member profiles.
+A command-line application built in Java to manage WCC (Women Coding Community) member profiles.
 
-This project allows users to add, view, update, delete, and search member profiles directly from the terminal. It focuses on practising core Java concepts such as Collections, File I/O, Object-Oriented Programming, and basic CRUD operations.
-
-The goal of this tool is to provide a clean and structured way to manage community member information such as name, email, location, skills, and interests.
+Members are stored in a CSV file and loaded automatically on startup. The app supports adding, viewing, updating, deleting, searching, and sorting members from an interactive terminal menu.
 
 ## Features
 
-### Main features:
+- Add new member profiles (name, email, location, skills)
+- View all members in a formatted table
+- Update existing member information (looked up by email)
+- Delete members by email
+- Search members by location
+- Search members by skill
+- Sort members by name (A–Z)
+- Sort members by join date
+- Email format validation with re-prompt on invalid input
+- Persist data to `members.csv` on every change
+- Load data from `members.csv` on startup
 
-Add new member profiles
+## Project Structure
 
-View all member profiles
-
-Update existing member information
-
-Delete member profiles
-
-**Search members by:**
-
-- Skills
-
-- Location
-
-Store member data in a text/CSV file
-
-Load member data from a file on application start
-
-Display formatted member lists in the console
-
-Email format validation
-
-Export members to CSV
-
-Import members from CSV
-
-**Sort members by:**
-
-- Name
-- Join date
+```
+src/
+├── main/java/com/wcc/platform/
+│   ├── Main.java                      # Entry point
+│   ├── cli/
+│   │   └── MemberCli.java             # Interactive menu loop
+│   ├── model/
+│   │   ├── Member.java                # Member data model
+│   │   ├── MemberRepository.java      # Repository interface
+│   │   └── CsvMemberRepository.java   # CSV-backed implementation
+│   └── validation/
+│       └── EmailValidator.java        # Email regex validation
+└── test/java/com/wcc/platform/
+    └── EmailValidatorTest.java        # Unit tests
+```
 
 ## Technologies
-```
- Java 17
-Command Line Interface (CLI)
- ```
+
+- Java 17
+- Gradle 9 (Groovy DSL)
+- JUnit Jupiter 5.10.2
 
 ## How to Run
 
-Ensure Java 17 is selected as the SDK
+Make sure Java 17 is set as the SDK.
 
-Build the project
-```
+**Build:**
+```bash
 ./gradlew build
 ```
 
-Run the project
-``` 
+**Run:**
+```bash
 ./gradlew run
 ```
 
+**Test:**
+```bash
+./gradlew test
+```
 
-### Using the Application
+## Using the Application
 
-Once started, the application will display a menu with options such as:
+Once started, the application displays an interactive menu:
 
-Add Member
+```
+===== Member Directory =====
+1. Add Member
+2. View Members
+3. Update Member
+4. Delete Member
+5. Search by Location
+6. Search by Skill
+7. Sort by Name
+8. Sort by Join Date
+0. Exit
+```
 
-View Members
+Follow the on-screen prompts. Member data is automatically saved to `members.csv` after any change.
 
-Update Member
+## Data Storage
 
-Delete Member
+Members are saved in `members.csv` in the working directory with the format:
 
-Search Member
+```
+name,email,location,skills,joinDate
+Jane Doe,jane@example.com,London,Java|Python,2024-01-15
+```
 
-Export to CSV
-
-Import from CSV
-
-Sort Members
-
-Exit
-
-Follow the on-screen prompts to perform actions.
+Skills are stored as pipe-separated values within the CSV field.

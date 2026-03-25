@@ -1,0 +1,20 @@
+# Gradle
+.gradle/
+build/
+gradle/caches/
+gradle/daemon/
+gradle/native/
+gradle/wrapper/dists/
+
+# IntelliJ (beyond what .idea/.gitignore covers)
+*.iml
+out/
+
+# macOS
+.DS_Store
+
+# Claude Code
+CLAUDE.md
+
+# SCV
+members.csv
