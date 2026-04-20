@@ -1,0 +1,602 @@
+[
+  {
+    "title": "Two Sum",
+    "description": "Given an array of integers `nums` and an integer `target`, return the indices of the two distinct elements such that they add up to `target`. You may assume exactly one solution exists, and you may not use the same element twice. The order of the returned indices does not matter.",
+    "difficulty": "Easy",
+    "hint": "Use a HashMap (a key-value lookup table) to store numbers you’ve seen so far and their indices. For each number `x`, compute its complement `target - x` and check if it already exists in the map. This avoids nested loops and reduces time complexity from O(n^2) to O(n)."
+  },
+  {
+    "title": "Reverse String",
+    "description": "Write a function that reverses a string. The input is typically given as a sequence of characters, and you should modify it in-place if possible (without allocating extra space for another string). Example: 'hello' → 'olleh'.",
+    "difficulty": "Easy",
+    "hint": "Use the two-pointer technique: one pointer starts at the beginning and one at the end. Swap the characters and move both pointers toward the center. This is an in-place operation with O(1) extra space."
+  },
+  {
+    "title": "Palindrome Check",
+    "description": "Given a string, determine whether it is a palindrome (reads the same forward and backward). Depending on requirements, you may need to ignore case and non-alphanumeric characters (e.g., 'A man, a plan, a canal: Panama' is a palindrome).",
+    "difficulty": "Easy",
+    "hint": "Use two pointers from both ends of the string. Compare characters while moving inward. Optionally preprocess the string (e.g., lowercase and remove non-alphanumeric characters) to simplify comparisons."
+  },
+  {
+    "title": "FizzBuzz",
+    "description": "Given an integer `n`, return or print the numbers from 1 to `n`. For multiples of 3, output 'Fizz' instead of the number; for multiples of 5, output 'Buzz'; for numbers divisible by both 3 and 5, output 'FizzBuzz'.",
+    "difficulty": "Easy",
+    "hint": "Use the modulo operator (%) to check divisibility. Check the combined case (`n % 3 == 0 && n % 5 == 0`) first to avoid missing 'FizzBuzz'."
+  },
+  {
+    "title": "Find Max in Array",
+    "description": "Given an array of integers, return the largest (maximum) value. The array is guaranteed to contain at least one element.",
+    "difficulty": "Easy",
+    "hint": "Initialize a variable `max` with the first element, then iterate through the array and update it whenever you find a larger value. This is a linear scan with O(n) time complexity."
+  },
+  {
+    "title": "Count Vowels",
+    "description": "Given a string, count the number of vowels (a, e, i, o, u). Decide whether the check should be case-insensitive (typically yes).",
+    "difficulty": "Easy",
+    "hint": "Iterate through each character and check if it belongs to a predefined set of vowels. Using a Set improves lookup clarity and keeps the code readable."
+  },
+  {
+    "title": "Remove Duplicates",
+    "description": "Given an array, return a new array with duplicate values removed so that each element appears only once. The relative order may or may not need to be preserved depending on requirements.",
+    "difficulty": "Easy",
+    "hint": "Use a Set, which stores only unique elements. If order matters, iterate through the array and add elements to a new list only if they haven’t been seen before."
+  },
+  {
+    "title": "Merge Two Arrays",
+    "description": "Given two arrays, combine them into a single array containing all elements from both. If the arrays are sorted, you may optionally merge them in sorted order.",
+    "difficulty": "Easy",
+    "hint": "For unsorted arrays, simply append one array to the other. For sorted arrays, use a two-pointer approach to merge efficiently in O(n + m) time."
+  },
+  {
+    "title": "Valid Parentheses",
+    "description": "Given a string containing only the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. A string is valid if brackets are closed in the correct order and every opening bracket has a matching closing bracket.",
+    "difficulty": "Easy",
+    "hint": "Use a stack (Last-In-First-Out data structure). Push opening brackets onto the stack. When you encounter a closing bracket, check if it matches the top of the stack. If not, the string is invalid."
+  },
+  {
+    "title": "Binary Search",
+    "description": "Given a sorted array of integers and a target value, return the index of the target if found. If not found, return an indicator such as -1. The algorithm must run in O(log n) time.",
+    "difficulty": "Easy",
+    "hint": "Use the divide-and-conquer approach: compare the target with the middle element. If it’s smaller, search the left half; if larger, search the right half. Repeat until found or the search space is empty."
+  },
+  {
+    "title": "First Unique Character",
+    "description": "Given a string, find the index of the first non-repeating character. If all characters repeat, return -1.",
+    "difficulty": "Easy",
+    "hint": "First, build a frequency map (character → count). Then iterate through the string again and return the index of the first character with count 1."
+  },
+  {
+    "title": "Missing Number",
+    "description": "Given an array containing `n` distinct numbers taken from the range [0, n], return the one number that is missing from the array.",
+    "difficulty": "Easy",
+    "hint": "Use the formula for the sum of the first n integers: n(n+1)/2. Subtract the actual sum of the array to find the missing number. Alternatively, use XOR to cancel out matching values."
+  },
+  {
+    "title": "Climbing Stairs",
+    "description": "You are climbing a staircase with `n` steps. Each time you can either climb 1 or 2 steps. Return the number of distinct ways to reach the top.",
+    "difficulty": "Easy",
+    "hint": "This is a dynamic programming problem. The number of ways to reach step `n` equals the sum of ways to reach `n-1` and `n-2`. This forms a Fibonacci-like sequence."
+  },
+  {
+    "title": "Intersection of Arrays",
+    "description": "Given two arrays, return their intersection — the set of elements that appear in both arrays. Each element in the result should be unique.",
+    "difficulty": "Easy",
+    "hint": "Store elements of one array in a Set for O(1) lookups, then iterate through the other array and collect elements that exist in the Set."
+  },
+  {
+    "title": "Move Zeroes",
+    "description": "Given an array, move all zeroes to the end while maintaining the relative order of the non-zero elements. The operation should be done in-place if possible.",
+    "difficulty": "Easy",
+    "hint": "Use two pointers: one pointer tracks the position to place the next non-zero element, while the other scans through the array. This avoids unnecessary swaps and keeps the operation O(n)."
+  },
+  {
+    "title": "Rotate Array",
+    "description": "Given an array `nums`, rotate the array to the right by `k` steps, where `k` is non-negative. This means each element moves `k` positions to the right, and elements that fall off the end wrap around to the beginning. You must modify the array in-place (without using extra space if possible).",
+    "difficulty": "Easy",
+    "hint": "A common in-place approach uses array reversal: (1) reverse the entire array, (2) reverse the first `k` elements, (3) reverse the remaining elements. This works because reversal reorders elements into the correct rotated positions."
+  },
+  {
+    "title": "Sum of Digits",
+    "description": "Given a non-negative integer, repeatedly extract its digits and compute their sum. For example, 123 → 1 + 2 + 3 = 6.",
+    "difficulty": "Easy",
+    "hint": "Use modulo (%) to extract the last digit (`n % 10`) and integer division (`n / 10`) to remove it. Repeat until the number becomes 0. This is a standard digit extraction pattern."
+  },
+  {
+    "title": "Reverse Integer",
+    "description": "Given a signed 32-bit integer `x`, return its digits reversed. If reversing `x` causes the value to go outside the signed 32-bit integer range [-2^31, 2^31 - 1], return 0. Preserve the sign of the number.",
+    "difficulty": "Easy",
+    "hint": "Use modulo (%) to extract digits and build the reversed number step by step. Before appending a digit, check for overflow (e.g., whether multiplying the current result by 10 would exceed integer limits)."
+  },
+  {
+    "title": "Majority Element",
+    "description": "Given an array `nums`, return the element that appears more than ⌊n / 2⌋ times (i.e., more than half the array length). You may assume such an element always exists.",
+    "difficulty": "Easy",
+    "hint": "Use the Boyer-Moore Voting Algorithm: keep a candidate and a counter. When the counter is 0, pick a new candidate. Increment for matches, decrement for mismatches. This works because the majority element dominates all others combined."
+  },
+  {
+    "title": "Contains Duplicate",
+    "description": "Given an array of integers, determine if any value appears at least twice. Return true if any duplicate exists, otherwise return false.",
+    "difficulty": "Easy",
+    "hint": "Use a Set (a collection that stores unique elements). As you iterate, check if the current value is already in the Set. If yes, a duplicate exists. This gives O(n) time with O(n) space."
+  },
+  {
+    "title": "Single Number",
+    "description": "Given a non-empty array of integers, every element appears twice except for one. Find that single one. You must solve it with linear runtime and constant extra space.",
+    "difficulty": "Easy",
+    "hint": "Use XOR (^) bitwise operation: `a ^ a = 0` and `a ^ 0 = a`. When you XOR all numbers together, duplicate pairs cancel out, leaving only the unique number."
+  },
+  {
+    "title": "Power of Two",
+    "description": "Given an integer `n`, return true if it is a power of two, otherwise return false. A number is a power of two if it can be written as 2^k for some integer k ≥ 0.",
+    "difficulty": "Easy",
+    "hint": "Use a bit manipulation trick: powers of two have exactly one '1' bit in binary. The expression `n & (n - 1) == 0` removes the lowest set bit. If the result is 0 (and n > 0), it is a power of two."
+  },
+  {
+    "title": "Excel Column Number",
+    "description": "Given a string `columnTitle` representing an Excel column title (e.g., 'A', 'AB'), return its corresponding column number. This is similar to converting a number from base-26 representation to base-10.",
+    "difficulty": "Easy",
+    "hint": "Treat each character as a digit in base-26 where 'A' = 1, 'B' = 2, ..., 'Z' = 26. For each character, multiply the current result by 26 and add the value of the character."
+  },
+  {
+    "title": "Roman to Integer",
+    "description": "Given a Roman numeral string, convert it to an integer. Roman numerals use symbols with additive and subtractive rules (e.g., 'IV' = 4, 'IX' = 9).",
+    "difficulty": "Easy",
+    "hint": "Map each Roman symbol to its value. Iterate through the string: if a symbol is smaller than the next one, subtract it; otherwise, add it. This handles subtractive cases like 'IV' and 'IX'."
+  },
+  {
+    "title": "Longest Common Prefix",
+    "description": "Write a function to find the longest common prefix string among an array of strings. If there is no common prefix, return an empty string.",
+    "difficulty": "Easy",
+    "hint": "Start with the first string as a reference. Compare characters at the same index across all strings. Stop when a mismatch occurs or any string ends. This is a horizontal scanning approach."
+  },
+  {
+    "title": "Shuffle Array",
+    "description": "Given an array, randomly shuffle its elements so that each possible permutation is equally likely. This is important for unbiased randomness in algorithms.",
+    "difficulty": "Easy",
+    "hint": "Use the Fisher-Yates (Knuth) shuffle: iterate from the end of the array to the beginning, and swap the current element with a random element from the remaining unshuffled portion. This ensures uniform randomness in O(n) time."
+  },
+  {
+    "title": "Min Stack",
+    "description": "Design a stack data structure that supports standard operations (`push`, `pop`, `top`) and an additional operation `getMin`, which returns the minimum element in the stack at any time. All operations should run in constant time O(1).",
+    "difficulty": "Easy",
+    "hint": "Use an auxiliary stack to track minimum values. Each time you push a value, also push the current minimum (either the new value or the previous minimum). This allows `getMin` to run in O(1) time."
+  },
+  {
+    "title": "Valid Anagram",
+    "description": "Given two strings `s` and `t`, return true if `t` is an anagram of `s`, and false otherwise. An anagram is formed by rearranging the letters of a word using all original letters exactly once.",
+    "difficulty": "Easy",
+    "hint": "Either sort both strings and compare them, or use a frequency map (character → count). The frequency approach is more efficient (O(n)) and avoids sorting."
+  },
+  {
+    "title": "Counting Bits",
+    "description": "Given an integer `n`, return an array `ans` where `ans[i]` is the number of 1's (set bits) in the binary representation of `i`, for all `0 ≤ i ≤ n`.",
+    "difficulty": "Easy",
+    "hint": "Use dynamic programming: for each number `i`, the number of set bits equals `bits[i >> 1] + (i & 1)`. This reuses previously computed results and runs in O(n)."
+  },
+  {
+    "title": "Happy Number",
+    "description": "Write an algorithm to determine if a number is a \"happy number.\" Starting with a positive integer, repeatedly replace the number with the sum of the squares of its digits. If the process eventually reaches 1, the number is happy. If it loops endlessly in a cycle that does not include 1, it is not.",
+    "difficulty": "Easy",
+    "hint": "Use a Set to track numbers you’ve already seen. If a number repeats, a cycle exists. Alternatively, use Floyd’s cycle detection (fast/slow pointers) to detect loops."
+  },
+  {
+    "title": "3Sum",
+    "description": "Given an integer array `nums`, return all unique triplets `[nums[i], nums[j], nums[k]]` such that `i ≠ j ≠ k` and their sum is zero. The solution set must not contain duplicate triplets.",
+    "difficulty": "Medium",
+    "hint": "Sort the array first. Then fix one number and use a two-pointer approach on the remaining elements to find pairs that sum to the negative of the fixed number. Skip duplicates to avoid repeated triplets."
+  },
+  {
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string `s`, find the length of the longest substring (contiguous sequence) without repeating characters.",
+    "difficulty": "Medium",
+    "hint": "Use the sliding window technique with two pointers. Expand the window while characters are unique, and shrink it when a duplicate appears. Use a Set or HashMap to track characters in the current window."
+  },
+  {
+    "title": "Container With Most Water",
+    "description": "Given an array `height` where each element represents a vertical line on the x-axis, find two lines that together with the x-axis form a container that holds the maximum amount of water. The area is determined by the shorter line and the distance between them.",
+    "difficulty": "Medium",
+    "hint": "Use two pointers starting at both ends of the array. Compute the area and move the pointer pointing to the shorter line inward, since the height is the limiting factor."
+  },
+  {
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. You can return the groups in any order. Anagrams are words that contain the same characters in a different order.",
+    "difficulty": "Medium",
+    "hint": "Sort each word and use the sorted string as a key in a HashMap. All words with the same sorted form belong to the same group."
+  },
+  {
+    "title": "Product of Array Except Self",
+    "description": "Given an integer array `nums`, return an array `answer` such that `answer[i]` is equal to the product of all elements of `nums` except `nums[i]`. You must solve it without using division and in O(n) time.",
+    "difficulty": "Medium",
+    "hint": "Use prefix and suffix products: for each index, compute the product of elements before it and after it. Combine them to get the result without division, using O(1) extra space (excluding output array)."
+  },
+  {
+    "title": "Set Matrix Zeroes",
+    "description": "Given an m x n matrix, if an element is 0, set its entire row and column to 0. You must do it in-place (modifying the original matrix) if possible.",
+    "difficulty": "Medium",
+    "hint": "Use the first row and first column as markers to indicate which rows and columns should be zeroed. Be careful to track whether the first row or column originally contained zeros."
+  },
+  {
+    "title": "Spiral Matrix",
+    "description": "Given an m x n matrix, return all elements in spiral order (clockwise, starting from the top-left corner).",
+    "difficulty": "Medium",
+    "hint": "Maintain four boundaries: top, bottom, left, and right. Traverse each edge and then move the boundaries inward. Repeat until all elements are processed."
+  },
+  {
+    "title": "Jump Game",
+    "description": "Given an array `nums` where each element represents the maximum jump length from that position, determine if you can reach the last index starting from the first index.",
+    "difficulty": "Medium",
+    "hint": "Use a greedy approach: track the furthest index you can reach so far. If at any point the current index exceeds this reach, you cannot proceed. If you can reach or pass the last index, return true."
+  },
+  {
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals into one, returning the resulting list of non-overlapping intervals.",
+    "difficulty": "Medium",
+    "hint": "Sort the intervals by their start time first. Then iterate, merging overlapping intervals by updating the end of the previous interval."
+  },
+  {
+    "title": "Insert Interval",
+    "description": "Given a set of non-overlapping intervals sorted by start time, insert a new interval and merge if necessary to maintain non-overlapping intervals.",
+    "difficulty": "Medium",
+    "hint": "Add the new interval into the correct position by start time, then merge overlapping intervals in a single pass."
+  },
+  {
+    "title": "Rotate Image",
+    "description": "Rotate an n x n 2D matrix representing an image by 90 degrees clockwise in place.",
+    "difficulty": "Medium",
+    "hint": "Transpose the matrix (swap rows and columns), then reverse each row to achieve rotation."
+  },
+  {
+    "title": "Word Search",
+    "description": "Given a 2D board of letters and a word, determine if the word exists in the grid. Letters must be sequentially adjacent horizontally or vertically, and the same cell cannot be used twice.",
+    "difficulty": "Medium",
+    "hint": "Use depth-first search (DFS) to explore all possible paths starting from cells matching the first character. Mark cells as visited and backtrack."
+  },
+  {
+    "title": "Combination Sum",
+    "description": "Given a set of candidate numbers and a target number, find all unique combinations where candidates sum to the target. Each number may be used unlimited times.",
+    "difficulty": "Medium",
+    "hint": "Use backtracking: recursively try each candidate, add it to the path, reduce the target, and backtrack to explore other possibilities."
+  },
+  {
+    "title": "Permutations",
+    "description": "Given a list of distinct numbers, return all possible permutations (orderings) of these numbers.",
+    "difficulty": "Medium",
+    "hint": "Use backtracking with swapping. At each recursive step, swap the current element with each remaining element and recurse."
+  },
+  {
+    "title": "Subsets",
+    "description": "Given a set of distinct integers, return all possible subsets (the power set).",
+    "difficulty": "Medium",
+    "hint": "Use backtracking to include or exclude each element, or use bitmasking to generate all subset combinations."
+  },
+  {
+    "title": "Kth Largest Element",
+    "description": "Find the k-th largest element in an unsorted array.",
+    "difficulty": "Medium",
+    "hint": "Use a min-heap (priority queue) of size k to maintain the k largest elements seen so far."
+  },
+  {
+    "title": "Top K Frequent Elements",
+    "description": "Given an array of numbers, return the k most frequent elements.",
+    "difficulty": "Medium",
+    "hint": "Count frequencies using a hashmap, then use a heap to keep track of the top k elements."
+  },
+  {
+    "title": "Coin Change",
+    "description": "Given coins of different denominations and a total amount, find the minimum number of coins needed to make up that amount. Return -1 if impossible.",
+    "difficulty": "Medium",
+    "hint": "Use dynamic programming (DP). Build an array dp where dp[i] is the minimum coins to make amount i, and update bottom-up using all coin values."
+  },
+  {
+    "title": "Longest Increasing Subsequence",
+    "description": "Given an integer array, find the length of the longest strictly increasing subsequence.",
+    "difficulty": "Medium",
+    "hint": "Use dynamic programming: dp[i] = length of longest increasing subsequence ending at i. Optional optimization: use binary search to improve to O(n log n)."
+  },
+  {
+    "title": "Decode Ways",
+    "description": "Given a string of digits, determine how many ways it can be decoded into letters (1 → 'A', 2 → 'B', ..., 26 → 'Z').",
+    "difficulty": "Medium",
+    "hint": "Use dynamic programming. For each position, consider decoding one digit or two digits if valid, and sum the number of ways."
+  },
+  {
+    "title": "House Robber",
+    "description": "Given a list of non-negative integers representing the amount of money in each house along a street, determine the maximum amount you can rob tonight without alerting the police. You cannot rob two adjacent houses.",
+    "difficulty": "Medium",
+    "hint": "Use dynamic programming (DP). For each house, decide whether to rob it or skip it. Keep track of the maximum money up to each house using previous results."
+  },
+  {
+    "title": "Number of Islands",
+    "description": "Given a 2D grid of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically.",
+    "difficulty": "Medium",
+    "hint": "Use depth-first search (DFS). When you find a '1', explore all connected land cells recursively and mark them visited so you don’t count them again."
+  },
+  {
+    "title": "Course Schedule",
+    "description": "There are `numCourses` labeled 0 to `numCourses-1`. You are given prerequisite pairs `[a, b]` meaning you must take course `b` before course `a`. Determine if you can finish all courses.",
+    "difficulty": "Medium",
+    "hint": "Model courses as a directed graph. Use topological sorting to detect cycles. If a cycle exists, it’s impossible to finish all courses."
+  },
+  {
+    "title": "Clone Graph",
+    "description": "Given a reference to a node in a connected undirected graph, return a deep copy of the graph. Each node contains a value and a list of neighbors.",
+    "difficulty": "Medium",
+    "hint": "Use DFS or BFS. Maintain a HashMap to track already copied nodes to avoid duplication and preserve connections."
+  },
+  {
+    "title": "Binary Tree Level Order Traversal",
+    "description": "Given the root of a binary tree, return a list of values for each level from top to bottom.",
+    "difficulty": "Medium",
+    "hint": "Use breadth-first search (BFS). Use a queue to process nodes level by level, adding children to the queue as you go."
+  },
+  {
+    "title": "Validate BST",
+    "description": "Determine if a binary tree is a valid binary search tree (BST). A BST satisfies: left child < parent < right child for every node.",
+    "difficulty": "Medium",
+    "hint": "Use recursion with min and max bounds. Each node must lie within a valid range based on its ancestors."
+  },
+  {
+    "title": "Lowest Common Ancestor",
+    "description": "Given a binary tree and two nodes, find their lowest common ancestor (LCA), the deepest node that is an ancestor of both.",
+    "difficulty": "Medium",
+    "hint": "Use recursion. If one node is found in each subtree of the current node, the current node is the LCA. Propagate found nodes upwards."
+  },
+  {
+    "title": "Diameter of Binary Tree",
+    "description": "Find the length of the longest path between any two nodes in a binary tree. The path may or may not pass through the root.",
+    "difficulty": "Medium",
+    "hint": "Use DFS. For each node, calculate left and right subtree depths. Update the maximum diameter as left depth + right depth."
+  },
+  {
+    "title": "Implement Trie",
+    "description": "Build a Trie (prefix tree) for storing strings to support fast insert, search, and prefix queries.",
+    "difficulty": "Medium",
+    "hint": "Each Trie node stores a map of children for each character. Insert and search character by character, marking the end of words."
+  },
+  {
+    "title": "Word Break",
+    "description": "Given a string `s` and a dictionary of words `wordDict`, determine if `s` can be segmented into a sequence of one or more dictionary words.",
+    "difficulty": "Medium",
+    "hint": "Use dynamic programming. Let `dp[i]` be true if the substring `s[0:i]` can be formed. Check all partitions and update `dp` based on dictionary matches."
+  },
+  {
+    "title": "Gas Station",
+    "description": "There are `n` gas stations on a circular route. Each station has `gas[i]` amount of gas and costs `cost[i]` to reach the next. Return the starting station index if you can complete the circuit, else -1.",
+    "difficulty": "Medium",
+    "hint": "Use a greedy approach. If total gas < total cost, it’s impossible. Otherwise, track current fuel while iterating to find a valid starting station."
+  },
+  {
+    "title": "Task Scheduler",
+    "description": "Given a list of tasks represented by letters and a non-negative cooldown `n`, schedule tasks so that the same task appears at least `n` intervals apart. Minimize total intervals.",
+    "difficulty": "Medium",
+    "hint": "Use a priority queue (max heap) to always schedule the most frequent task available. Keep track of cooldowns before reusing a task."
+  },
+  {
+    "title": "Daily Temperatures",
+    "description": "Given a list of daily temperatures, return a list where each element indicates how many days you have to wait until a warmer temperature. If there is no future warmer day, put 0.",
+    "difficulty": "Medium",
+    "hint": "Use a monotonic stack to track indices of temperatures in decreasing order. Pop from the stack when a warmer temperature is found and calculate the difference in indices."
+  },
+  {
+    "title": "Sliding Window Maximum",
+    "description": "Given an array and a sliding window size `k`, find the maximum value in each window as it moves from left to right.",
+    "difficulty": "Medium",
+    "hint": "Use a deque (double-ended queue) to maintain indices of potentially maximum elements. Discard indices outside the current window and remove smaller values from the deque efficiently."
+  },
+  {
+    "title": "Minimum Path Sum",
+    "description": "Given a `m x n` grid filled with non-negative numbers, find a path from top-left to bottom-right which minimizes the sum of all numbers along the path. You can only move either down or right at any point.",
+    "difficulty": "Medium",
+    "hint": "Use dynamic programming. For each cell, the minimum path sum is the cell's value plus the minimum of the sums from the top or left neighbor. Fill the DP table row by row or column by column."
+  },
+  {
+    "title": "Unique Paths",
+    "description": "A robot is located at the top-left corner of an `m x n` grid. The robot can only move either down or right. Count how many unique paths exist to reach the bottom-right corner.",
+    "difficulty": "Medium",
+    "hint": "Use dynamic programming. Let `paths[i][j]` = number of paths to reach cell `(i, j)`. Each cell = sum of paths from top + left neighbor. Initialize top row and left column to 1."
+  },
+  {
+    "title": "Search in Rotated Array",
+    "description": "Given a sorted array rotated at an unknown pivot, search for a target value and return its index. If not found, return -1. No duplicate values exist.",
+    "difficulty": "Medium",
+    "hint": "Use modified binary search. At each step, one half of the array is always sorted. Determine which half contains the target and recurse or iterate accordingly."
+  },
+  {
+    "title": "Find Peak Element",
+    "description": "A peak element is an element that is strictly greater than its neighbors. Given an array, find any peak element and return its index. Assume `nums[-1] = nums[n] = -∞`.",
+    "difficulty": "Medium",
+    "hint": "Use binary search. Compare middle element with neighbors: if left neighbor is larger, move left; if right neighbor is larger, move right. Repeat until a peak is found."
+  },
+  {
+    "title": "Longest Palindromic Substring",
+    "description": "Given a string `s`, find the longest substring that reads the same forwards and backwards (palindrome).",
+    "difficulty": "Medium",
+    "hint": "Expand around each character as a center. Check both odd-length and even-length palindromes and keep track of the longest found."
+  },
+  {
+    "title": "String to Integer",
+    "description": "Implement a function to convert a string to a 32-bit signed integer (like C/C++ `atoi`). The string may contain leading/trailing spaces, optional '+' or '-' signs, and digits. Ignore invalid characters after the number. Clamp values outside [-2³¹, 2³¹-1].",
+    "difficulty": "Medium",
+    "hint": "Process the string character by character. Skip spaces, handle optional sign, and accumulate digits. Check for integer overflow while constructing the number."
+  },
+  {
+    "title": "Median of Two Sorted Arrays",
+    "description": "Given two sorted arrays `nums1` and `nums2` of sizes `m` and `n`, find the median of the combined array in O(log (m+n)) time.",
+    "difficulty": "Hard",
+    "hint": "Use binary search on the smaller array to partition both arrays into halves such that left halves ≤ right halves. The median is max of left half and min of right half."
+  },
+  {
+    "title": "Merge K Sorted Lists",
+    "description": "Given an array of `k` sorted linked lists, merge them into one sorted linked list and return its head.",
+    "difficulty": "Hard",
+    "hint": "Use a min heap (priority queue) to always select the smallest node among the current heads of the lists. Insert the next node of the extracted node back into the heap."
+  },
+  {
+    "title": "Trapping Rain Water",
+    "description": "Given an array `height` representing elevation map where the width of each bar is 1, compute how much water can be trapped after raining.",
+    "difficulty": "Hard",
+    "hint": "Use two pointers. Track the maximum height seen from the left and right. At each step, the trapped water at a position = min(left_max, right_max) - height[i]. Move pointers inward from the smaller side."
+  },
+  {
+    "title": "Largest Rectangle in Histogram",
+    "description": "Given an array of bar heights representing a histogram, find the area of the largest rectangle that can be formed.",
+    "difficulty": "Hard",
+    "hint": "Use a monotonic stack to maintain indices of increasing bars. When encountering a smaller bar, calculate areas for bars popped from the stack as the smallest bar in the rectangle."
+  },
+  {
+    "title": "Word Ladder",
+    "description": "Given two words, `beginWord` and `endWord`, and a dictionary `wordList`, return the length of the shortest transformation sequence from `beginWord` to `endWord`. Each transformation must change exactly one letter at a time, and each intermediate word must exist in the dictionary. If no such sequence exists, return 0.",
+    "difficulty": "Hard",
+    "hint": "Model this as a graph where each word is a node and edges connect words differing by one letter. Use Breadth-First Search (BFS) to find the shortest path (fewest transformations), since BFS explores level by level."
+  },
+  {
+    "title": "Minimum Window Substring",
+    "description": "Given two strings `s` and `t`, return the smallest substring of `s` that contains all the characters of `t` (including duplicates). If no such substring exists, return an empty string.",
+    "difficulty": "Hard",
+    "hint": "Use the sliding window technique with two pointers. Expand the window to include all required characters, then shrink it while maintaining validity. Use a frequency map to track required vs current counts."
+  },
+  {
+    "title": "Edit Distance",
+    "description": "Given two strings `word1` and `word2`, return the minimum number of operations required to convert `word1` into `word2`. Allowed operations are insert, delete, or replace a character.",
+    "difficulty": "Hard",
+    "hint": "Use dynamic programming (DP). Define `dp[i][j]` as the minimum operations to convert the first `i` characters of `word1` to the first `j` characters of `word2`. Build the solution using smaller subproblems."
+  },
+  {
+    "title": "Regular Expression Matching",
+    "description": "Given a string `s` and a pattern `p`, implement regular expression matching with support for '.' (matches any single character) and '*' (matches zero or more of the preceding element). The match must cover the entire string.",
+    "difficulty": "Hard",
+    "hint": "Use dynamic programming. Handle two main cases: direct match (characters match or '.') and '*' which can represent zero or multiple occurrences of the previous character. Carefully define state transitions."
+  },
+  {
+    "title": "Wildcard Matching",
+    "description": "Given a string `s` and a pattern `p`, implement wildcard matching where '?' matches any single character and '*' matches any sequence of characters (including empty). The entire string must match the pattern.",
+    "difficulty": "Hard",
+    "hint": "Use dynamic programming or a greedy two-pointer approach. DP tracks matches for prefixes, while greedy keeps track of the last '*' position and backtracks when mismatches occur."
+  },
+  {
+    "title": "Serialize Deserialize Binary Tree",
+    "description": "Design an algorithm to serialize a binary tree into a string and deserialize it back into the original tree structure. The serialization should preserve both node values and tree structure.",
+    "difficulty": "Hard",
+    "hint": "Use DFS (preorder traversal) or BFS (level-order traversal). Include null markers (e.g., '#') for missing children so the structure can be reconstructed correctly during deserialization."
+  },
+  {
+    "title": "N Queens",
+    "description": "The n-queens puzzle is the problem of placing `n` queens on an `n x n` chessboard such that no two queens attack each other (no same row, column, or diagonal). Return all distinct solutions.",
+    "difficulty": "Hard",
+    "hint": "Use backtracking. Place queens row by row, and check if a position is valid before placing. Track columns and diagonals using sets or arrays to efficiently detect conflicts."
+  },
+  {
+    "title": "Sudoku Solver",
+    "description": "Write a program to solve a 9x9 Sudoku puzzle by filling empty cells. A valid solution must satisfy: each row, column, and 3x3 subgrid contains digits 1–9 without repetition.",
+    "difficulty": "Hard",
+    "hint": "Use backtracking. Try placing digits 1–9 in empty cells and check constraints. If a placement leads to a conflict, backtrack and try another value."
+  },
+  {
+    "title": "Burst Balloons",
+    "description": "Given an array `nums` representing balloons with values, you can burst balloons to gain coins. Bursting balloon `i` gives `nums[left] * nums[i] * nums[right]` coins. Return the maximum coins you can collect by choosing the optimal order.",
+    "difficulty": "Hard",
+    "hint": "Use dynamic programming on intervals. Instead of thinking about which balloon to burst first, consider which one to burst last in a subarray. This simplifies dependencies and allows reuse of subproblems."
+  },
+  {
+    "title": "Maximum Rectangle",
+    "description": "Given a binary matrix filled with '0's and '1's, find the largest rectangle containing only '1's and return its area.",
+    "difficulty": "Hard",
+    "hint": "Treat each row as the base of a histogram. Build heights of consecutive '1's and reuse the largest rectangle in histogram algorithm (using a stack) for each row."
+  },
+  {
+    "title": "Distinct Subsequences",
+    "description": "Given two strings `s` and `t`, return the number of distinct subsequences of `s` that equal `t`. A subsequence is formed by deleting characters without changing the order of remaining characters.",
+    "difficulty": "Hard",
+    "hint": "Use dynamic programming. Let `dp[i][j]` represent the number of ways the first `i` characters of `s` can form the first `j` characters of `t`. Build the solution by including or excluding characters."
+  },
+  {
+    "title": "Longest Valid Parentheses",
+    "description": "Given a string containing only '(' and ')', return the length of the longest valid (well-formed) parentheses substring.",
+    "difficulty": "Hard",
+    "hint": "Use a stack to track indices of unmatched parentheses, or use dynamic programming where `dp[i]` stores the length of the longest valid substring ending at index `i`."
+  },
+  {
+    "title": "Basic Calculator",
+    "description": "Given a string `s` representing a valid mathematical expression, evaluate and return its result. The expression may contain non-negative integers, '+', '-', parentheses '(', ')', and spaces. You must correctly handle operator precedence and nested parentheses.",
+    "difficulty": "Hard",
+    "hint": "Use a stack to handle parentheses. When you encounter '(', push the current result and sign onto the stack. When you see ')', compute the expression inside and combine it with the previous state. This simulates recursive evaluation using an iterative approach."
+  },
+  {
+    "title": "Sliding Window Median",
+    "description": "Given an array `nums` and a sliding window size `k`, return an array of the median values for each window as it moves from left to right. The median is the middle value when the window elements are sorted (or the average of two middle values if even-sized).",
+    "difficulty": "Hard",
+    "hint": "Use two heaps: a max heap for the smaller half and a min heap for the larger half. Keep them balanced so their sizes differ by at most one. As the window slides, insert the new element and remove the outgoing one while maintaining heap balance."
+  },
+  {
+    "title": "Find Median from Data Stream",
+    "description": "Design a data structure that supports adding integers from a data stream and finding the median of all elements so far. Implement `addNum(int num)` and `findMedian()` efficiently.",
+    "difficulty": "Hard",
+    "hint": "Maintain two heaps: a max heap for the lower half and a min heap for the upper half. Ensure size balance so median can be derived directly from heap tops in O(1), while insertions take O(log n)."
+  },
+  {
+    "title": "LFU Cache",
+    "description": "Design and implement a data structure for a Least Frequently Used (LFU) cache. It should support `get(key)` and `put(key, value)` in O(1) average time. When the cache reaches capacity, evict the least frequently used item. If there is a tie, evict the least recently used among them.",
+    "difficulty": "Hard",
+    "hint": "Combine a HashMap (for O(1) access) with a frequency tracking structure (e.g., a map of frequency → doubly linked list). Update frequency counts on every access and track the minimum frequency for eviction."
+  },
+  {
+    "title": "Alien Dictionary",
+    "description": "Given a list of words sorted lexicographically according to an unknown (alien) language, derive the order of characters in that language. If no valid ordering exists (due to contradictions), return an empty result.",
+    "difficulty": "Hard",
+    "hint": "Build a directed graph where edges represent ordering constraints between characters. Then perform a topological sort (e.g., using BFS with in-degrees or DFS) to determine a valid ordering."
+  },
+  {
+    "title": "Shortest Path in Graph",
+    "description": "Given a weighted graph with non-negative edge weights, find the shortest distance from a source node to all other nodes (or a specific target node).",
+    "difficulty": "Hard",
+    "hint": "Use Dijkstra’s algorithm with a priority queue (min heap). Always expand the node with the smallest known distance. Update distances (relaxation step) as shorter paths are found."
+  },
+  {
+    "title": "Critical Connections",
+    "description": "Given a network of `n` servers connected by edges, find all critical connections (bridges). A critical connection is an edge that, if removed, increases the number of connected components in the graph.",
+    "difficulty": "Hard",
+    "hint": "Use Tarjan’s algorithm (DFS-based). Track discovery time and low-link values. An edge is a bridge if the neighbor cannot reach an ancestor of the current node (i.e., `low[neighbor] > discovery[current]`)."
+  },
+  {
+    "title": "Network Delay Time",
+    "description": "You are given a network of `n` nodes and a list of travel times `times[i] = (u, v, w)` representing a directed edge. Starting from node `k`, determine how long it takes for all nodes to receive the signal. If not all nodes are reachable, return -1.",
+    "difficulty": "Hard",
+    "hint": "Model this as a shortest path problem and use Dijkstra’s algorithm. The answer is the maximum distance from the source to any node (if all nodes are reachable)."
+  },
+  {
+    "title": "Minimum Cost to Connect Points",
+    "description": "Given an array of points on a 2D plane, connect all points such that the total cost is minimized. The cost to connect two points is their Manhattan distance. Return the minimum total cost to connect all points.",
+    "difficulty": "Hard",
+    "hint": "This is a Minimum Spanning Tree (MST) problem. Use Prim’s algorithm (growing the tree greedily) or Kruskal’s algorithm (sorting edges and using Union-Find) to compute the optimal cost."
+  },
+  {
+    "title": "Reconstruct Itinerary",
+    "description": "Given a list of airline tickets represented as pairs of departure and arrival airports, reconstruct the itinerary in lexical (alphabetical) order starting from 'JFK'. All tickets must be used exactly once.",
+    "difficulty": "Hard",
+    "hint": "Build a graph and use DFS (Hierholzer’s algorithm for Eulerian paths). Use a priority queue (min heap) to always choose the smallest lexical destination first."
+  },
+  {
+    "title": "Word Break II",
+    "description": "Given a string `s` and a dictionary of words `wordDict`, return all possible sentences where `s` is segmented into a space-separated sequence of dictionary words.",
+    "difficulty": "Hard",
+    "hint": "Use backtracking to explore all valid splits. Apply memoization (caching results for substrings) to avoid recomputation and reduce exponential time complexity."
+  },
+  {
+    "title": "Expression Add Operators",
+    "description": "Given a string `num` containing only digits and an integer `target`, return all possible expressions by inserting '+', '-', or '*' between digits so that the resulting expression evaluates to `target`.",
+    "difficulty": "Hard",
+    "hint": "Use backtracking to try all possible splits and operator insertions. Track the current value and the last operand to correctly handle multiplication (due to operator precedence)."
+  },
+  {
+    "title": "Palindrome Partitioning II",
+    "description": "Given a string `s`, partition it such that every substring is a palindrome. Return the minimum number of cuts needed to achieve this partitioning.",
+    "difficulty": "Hard",
+    "hint": "Use dynamic programming. First precompute whether substrings are palindromes. Then compute the minimum cuts needed for each prefix using previously computed results."
+  },
+  {
+    "title": "Max Profit with K Transactions",
+    "description": "Given an array `prices` where `prices[i]` is the stock price on day `i`, and an integer `k`, find the maximum profit you can achieve with at most `k` transactions (buy + sell pairs). You cannot hold more than one stock at a time.",
+    "difficulty": "Hard",
+    "hint": "Use dynamic programming. Track states for each transaction: `buy[i]` (max profit after i-th buy) and `sell[i]` (after i-th sell). Update these iteratively for each price to compute the optimal result."
+  }
+]
