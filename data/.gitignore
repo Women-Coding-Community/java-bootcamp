@@ -1,0 +1,4 @@
+# Ignore H2 database files - they're binary and locked while app runs
+*.db
+*.mv.db
+*.trace.db

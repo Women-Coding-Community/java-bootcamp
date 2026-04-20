@@ -1,0 +1,9 @@
+# Mentorship Matches Export
+# Format: ID|MentorID|MentorName|MenteeID|MenteeName|Score|Skills|Status
+# Generated: 2026-02-12T09:57:52.794171700
+
+20debd80-561c-48b5-930c-e2e2789ee22c|39c08197-46da-486b-9e32-9d6672350f79|Alice Johnson|adc4df88-00d2-437d-9803-afe6464429e7|Frank Lee|1.00|java,spring|ACTIVE
+6e6397b4-00e3-4c28-8de6-384ebd08b28a|5da8777d-50ad-4310-ab3c-0ea39e0905a7|Bob Smith|2b7ed551-81fb-4211-ad73-48f9db1895f3|Grace Chen|1.00|machine learning,python,data analysis|ACTIVE
+ffd0ed61-c0b6-4809-b54f-8def82637b1e|48c73e56-5ec6-442e-b0fe-fc52e2d59e3b|Carol Williams|f91b4463-30fc-4555-9f1e-97bad00a0b38|Henry Wilson|0.67|react,javascript|ACTIVE
+7c8c24d8-580f-4d61-81b5-93442df7fe12|39c08197-46da-486b-9e32-9d6672350f79|Alice Johnson|877835a9-ae4c-4a47-b4a3-314e26b49a01|Karen Davis|0.67|sql,java|CANCELLED
+0fd92fa0-0619-4ded-af6f-ccc62eb0cc9b|adc6819c-3e20-4bdb-a861-2a26b42a1ec9|David Brown|877835a9-ae4c-4a47-b4a3-314e26b49a01|Karen Davis|0.33|java|ACTIVE

@@ -1,0 +1,43 @@
+╔══════════════════════════════════════════════════════════════╗
+║           MENTORSHIP MATCHER - DETAILED REPORT               ║
+╚══════════════════════════════════════════════════════════════╝
+
+Generated: 2026-02-12T09:57:52.799727300
+
+── SUMMARY ─────────────────────────────────────────────────────
+Total Mentors: 5
+Total Mentees: 6
+Total Matches: 5
+Active Matches: 4
+
+── MENTORS ─────────────────────────────────────────────────────
+  • Mentor{name='Alice Johnson', email='alice@example.com', expertise=[java, spring boot, microservices, sql], mentees=1/3}
+  • Mentor{name='Bob Smith', email='bob@example.com', expertise=[python, machine learning, data science, tensorflow], mentees=1/3}
+  • Mentor{name='Carol Williams', email='carol@example.com', expertise=[javascript, react, node.js, typescript, css], mentees=1/3}
+  • Mentor{name='David Brown', email='david@example.com', expertise=[java, kotlin, android, mobile development], mentees=1/3}
+  • Mentor{name='Eva Martinez', email='eva@example.com', expertise=[devops, docker, kubernetes, aws, ci/cd], mentees=0/3}
+
+── MENTEES ─────────────────────────────────────────────────────
+  • Mentee{name='Frank Lee', email='frank@example.com', goals=[java, spring], level='beginner', matched=true}
+  • Mentee{name='Grace Chen', email='grace@example.com', goals=[machine learning, python, data analysis], level='intermediate', matched=true}
+  • Mentee{name='Henry Wilson', email='henry@example.com', goals=[react, javascript, frontend development], level='beginner', matched=true}
+  • Mentee{name='Ivy Taylor', email='ivy@example.com', goals=[android, mobile apps, kotlin], level='intermediate', matched=false}
+  • Mentee{name='Jack Anderson', email='jack@example.com', goals=[docker, cloud computing, aws], level='advanced', matched=false}
+  • Mentee{name='Karen Davis', email='karen@example.com', goals=[sql, database design, java], level='beginner', matched=true}
+
+── MATCHES ─────────────────────────────────────────────────────
+  • Match{mentor='Alice Johnson', mentee='Frank Lee', skills=[java, spring], score=100.00%, status=ACTIVE}
+    Date: 2026-02-12T09:57:52.771063
+
+  • Match{mentor='Bob Smith', mentee='Grace Chen', skills=[machine learning, python, data analysis], score=100.00%, status=ACTIVE}
+    Date: 2026-02-12T09:57:52.781737700
+
+  • Match{mentor='Carol Williams', mentee='Henry Wilson', skills=[react, javascript], score=66.67%, status=ACTIVE}
+    Date: 2026-02-12T09:57:52.782841500
+
+  • Match{mentor='Alice Johnson', mentee='Karen Davis', skills=[sql, java], score=66.67%, status=CANCELLED}
+    Date: 2026-02-12T09:57:52.785653600
+
+  • Match{mentor='David Brown', mentee='Karen Davis', skills=[java], score=33.33%, status=ACTIVE}
+    Date: 2026-02-12T09:57:52.789334800
+

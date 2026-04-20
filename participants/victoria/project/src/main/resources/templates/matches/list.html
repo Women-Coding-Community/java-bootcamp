@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Matches - Mentorship Matcher</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root { --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        body { min-height: 100vh; display: flex; flex-direction: column; }
+        .navbar { background: var(--primary-gradient) !important; }
+        .card { border: none; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        .btn-primary { background: var(--primary-gradient); border: none; }
+        .match-score.high { color: #28a745; }
+        .match-score.medium { color: #ffc107; }
+        .match-score.low { color: #dc3545; }
+        footer { margin-top: auto; background-color: #f8f9fa; padding: 1rem 0; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" th:href="@{/}"><i class="bi bi-people-fill me-2"></i>Mentorship Matcher</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" th:href="@{/}"><i class="bi bi-house-fill me-1"></i>Home</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/mentors}"><i class="bi bi-person-badge me-1"></i>Mentors</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/mentees}"><i class="bi bi-person me-1"></i>Mentees</a></li>
+                    <li class="nav-item"><a class="nav-link active" th:href="@{/matches}"><i class="bi bi-link-45deg me-1"></i>Matches</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-3" th:if="${successMessage}">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="bi bi-check-circle me-2"></i><span th:text="${successMessage}"></span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    </div>
+
+    <main class="container my-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2><i class="bi bi-link-45deg me-2"></i>Active Matches</h2>
+            <a th:href="@{/matches/find}" class="btn btn-primary">
+                <i class="bi bi-search me-2"></i>Find Potential Matches
+            </a>
+        </div>
+
+        <div th:if="${#lists.isEmpty(activeMatches)}" class="alert alert-info">
+            <i class="bi bi-info-circle me-2"></i>No active matches yet. 
+            <a th:href="@{/matches/find}" class="alert-link">Find potential matches!</a>
+        </div>
+
+        <div class="row g-4" th:unless="${#lists.isEmpty(activeMatches)}">
+            <div class="col-md-6" th:each="match : ${activeMatches}">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-5 text-center">
+                                <i class="bi bi-person-badge display-6 text-primary"></i>
+                                <h6 class="mt-2 mb-0" th:text="${match.mentor.name}">Mentor</h6>
+                                <small class="text-muted">Mentor</small>
+                            </div>
+                            <div class="col-2 text-center">
+                                <i class="bi bi-arrow-left-right display-6 text-success"></i>
+                                <div class="match-score mt-1" 
+                                     th:classappend="${match.matchScore >= 0.7} ? 'high' : (${match.matchScore >= 0.4} ? 'medium' : 'low')"
+                                     th:text="${#numbers.formatDecimal(match.matchScore * 100, 0, 0)} + '%'">75%</div>
+                            </div>
+                            <div class="col-5 text-center">
+                                <i class="bi bi-person display-6 text-success"></i>
+                                <h6 class="mt-2 mb-0" th:text="${match.mentee.name}">Mentee</h6>
+                                <small class="text-muted">Mentee</small>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">
+                                <i class="bi bi-calendar me-1"></i>
+                                Matched: <span th:text="${#temporals.format(match.matchDate, 'MMM dd, yyyy')}">Jan 01, 2026</span>
+                            </small>
+                            <form th:action="@{/matches/{id}/cancel(id=${match.id})}" method="post" style="display:inline;">
+                                <button type="submit" class="btn btn-outline-danger btn-sm">
+                                    <i class="bi bi-x-circle me-1"></i>Cancel
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center text-muted">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 Mentorship Matcher. Built with Spring Boot &amp; Thymeleaf.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
